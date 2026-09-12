@@ -4,16 +4,40 @@
    ======================================== */
 
 // =================== LOADER ===================
+function hideLoader() {
+  const loader = document.getElementById('loader');
+  if (!loader || loader.classList.contains('hidden')) return;
+  loader.classList.add('hidden');
+  // Trigger home animations
+  document.querySelectorAll('.home-text > *').forEach((el, i) => {
+    el.style.animationDelay = `${i * 0.15 + 0.2}s`;
+    el.style.animation = 'fadeUp 0.8s ease both';
+  });
+}
+
+// Prefer faster perceived load: hide loader shortly after DOM ready,
+// but also hide on full load if it happens later.
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(hideLoader, 600);
+});
 window.addEventListener('load', () => {
-  setTimeout(() => {
-    const loader = document.getElementById('loader');
-    loader.classList.add('hidden');
-    // Trigger home animations
-    document.querySelectorAll('.home-text > *').forEach((el, i) => {
-      el.style.animationDelay = `${i * 0.15 + 0.2}s`;
-      el.style.animation = 'fadeUp 0.8s ease both';
-    });
-  }, 2200);
+  setTimeout(hideLoader, 120);
+});
+
+// Auto-add lazy loading & async decoding for non-critical images
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img').forEach(img => {
+    // Keep hero image eager for LCP improvements
+    if (img.classList.contains('home-photo')) {
+      img.setAttribute('loading', 'eager');
+      img.setAttribute('decoding', 'async');
+      return;
+    }
+    // Skip loader images (if any) and images explicitly opted-out
+    if (img.closest('#loader') || img.hasAttribute('data-skip-lazy')) return;
+    img.setAttribute('loading', 'lazy');
+    img.setAttribute('decoding', 'async');
+  });
 });
 
 // =================== NAVBAR ===================
