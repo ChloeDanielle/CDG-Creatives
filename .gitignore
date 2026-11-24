@@ -1,0 +1,4 @@
+# Raw GIF exports: the site plays the optimised MP4 copies in assets/motion/.
+# Kept locally as source files; too large for the repo (up to 67 MB each).
+GifAnimations/Email-*-Header-GIF*.gif
+GifAnimations/GIF *.gif

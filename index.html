@@ -3,470 +3,214 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chloe Danielle D. Gutierrez — Graphic Designer</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Chloe Danielle Gutierrez — Graphic Designer</title>
+  <meta name="description" content="Chloe Danielle Gutierrez — graphic designer. Static ads, motion, web banners and UI for consumer and e-commerce brands." />
+  <meta name="theme-color" content="#08090b" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
-  <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  </noscript>
-  <link rel="preload" as="image" href="ME.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="is-loading">
 
-  <!-- LOADER -->
-  <div id="loader">
-    <div class="loader-inner">
-      <div class="loader-logo">CDG</div>
-      <div class="loader-bar"><div class="loader-fill"></div></div>
-      <p class="loader-text">Loading bold creative work</p>
-    </div>
+  <!-- Intro -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro__mark chrome">CDG</div>
+    <div class="intro__bar"><span id="introBar"></span></div>
   </div>
 
-  <!-- NAVBAR -->
-  <nav id="navbar">
-    <div class="nav-logo">CDG</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#experience">Work</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-toggle" id="navToggle">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label">View</span></div>
 
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#home" class="mob-link">Home</a></li>
-      <li><a href="#experience" class="mob-link">Work</a></li>
-      <li><a href="#projects" class="mob-link">Projects</a></li>
-      <li><a href="#education" class="mob-link">Education</a></li>
-      <li><a href="#contact" class="mob-link">Contact</a></li>
-    </ul>
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__mark chrome">CDG</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#work" data-scramble>Work</a>
+      <a href="#motion" data-scramble>Motion</a>
+      <a href="#banners" data-scramble>Banners</a>
+      <a href="#web" data-scramble>Web</a>
+      <a href="#about" data-scramble>About</a>
+    </nav>
+    <a href="#contact" class="nav__cta metal-pill mono" data-scramble>Contact</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav>
+      <a href="#work"><span class="mono">01</span>Work</a>
+      <a href="#motion"><span class="mono">02</span>Motion</a>
+      <a href="#banners"><span class="mono">03</span>Banners</a>
+      <a href="#web"><span class="mono">04</span>Web</a>
+      <a href="#about"><span class="mono">05</span>About</a>
+      <a href="#contact"><span class="mono">06</span>Contact</a>
+    </nav>
   </div>
 
-  <!-- HOME -->
-  <section id="home">
-    <div class="home-container">
-      <div class="home-text">
-        <span class="home-eyebrow">Graphic Designer / Creative Developer</span>
-        <h1 class="home-name">CHLOE<br/>DANIELLE<br/>GUTIERREZ</h1>
-        <p class="home-tagline">Bold visuals, digital campaigns, motion work, email designs, and interactive experiences built with a sharp creative eye.</p>
-        <div class="home-meta">
-          <a href="mailto:gutierrezchloe1212@gmail.com">gutierrezchloe1212@gmail.com</a>
-          <span>@gchole1</span>
-          <span>Cuenca, Batangas</span>
+  <main id="top">
+
+    <!-- Hero: name only -->
+    <section class="hero" id="hero">
+      <canvas class="hero__canvas" id="chromeCanvas" aria-hidden="true"></canvas>
+      <div class="hero__content">
+        <p class="hero__eyebrow mono"><span>Graphic Designer</span></p>
+        <h1 class="hero__name">
+          <span class="line"><span class="chrome">Chloe</span></span>
+          <span class="line"><span class="chrome">Danielle</span></span>
+          <span class="line"><span class="chrome">Gutierrez</span></span>
+        </h1>
+      </div>
+    </section>
+
+    <!-- Clients -->
+    <section class="clients section" id="clients">
+      <header class="section__head">
+        <span class="section__num mono">(00)</span>
+        <h2 class="section__title chrome">Brands I've worked with</h2>
+      </header>
+      <ul class="clients__grid" id="clientGrid"></ul>
+    </section>
+
+    <!-- Static ads -->
+    <section class="work section" id="work">
+      <header class="section__head">
+        <span class="section__num mono">(01)</span>
+        <h2 class="section__title chrome">Static ads</h2>
+      </header>
+      <div class="ads" id="adGrid"></div>
+    </section>
+
+    <!-- Motion -->
+    <section class="motion section" id="motion">
+      <header class="section__head">
+        <span class="section__num mono">(02)</span>
+        <h2 class="section__title chrome">Motion &amp; GIF</h2>
+        <p class="section__note mono">Email headers and animated social ads</p>
+      </header>
+      <div class="motion__scroller" id="motionScroller">
+        <div class="motion__row motion__row--tall" id="motionTall"></div>
+        <div class="motion__row motion__row--square" id="motionSquare"></div>
+      </div>
+      <div class="motion__hint mono" aria-hidden="true"><span>Swipe</span><span class="motion__progress"><i id="motionProgress"></i></span><span>→</span></div>
+    </section>
+
+    <!-- Banners -->
+    <section class="banners section" id="banners">
+      <header class="section__head">
+        <span class="section__num mono">(03)</span>
+        <h2 class="section__title chrome">Web banners</h2>
+      </header>
+      <div class="stack" id="bannerStack"></div>
+    </section>
+
+    <!-- Web -->
+    <section class="web section" id="web">
+      <header class="section__head">
+        <span class="section__num mono">(04)</span>
+        <h2 class="section__title chrome">Web &amp; UI/UX</h2>
+        <p class="section__note mono">Shopify, landing pages, product pages, dashboards</p>
+      </header>
+      <ol class="web__list" id="webList"></ol>
+      <div class="web__preview" id="webPreview" aria-hidden="true"><img alt="" /></div>
+    </section>
+
+    <!-- About -->
+    <section class="about section" id="about">
+      <header class="section__head">
+        <span class="section__num mono">(05)</span>
+        <h2 class="section__title chrome">About</h2>
+      </header>
+
+      <p class="about__statement" data-words>
+        I design for the first second, the moment someone decides to stop or keep scrolling. My background is in multimedia computing and game development, so I treat every ad as a small system: one clear idea, a strong hierarchy and an offer that's hard to miss.
+      </p>
+
+      <div class="about__cols">
+        <div class="about__col">
+          <h3 class="mono about__label">Experience</h3>
+          <dl class="entries">
+            <div class="entry">
+              <dt>Junior Graphic Designer</dt>
+              <dd class="entry__org">Launch Titans</dd>
+              <dd class="entry__meta mono">Florida, US · Remote</dd>
+              <dd class="entry__desc">Visual assets and brand collateral for a US growth agency. Static ads, motion, banners and landing pages for e-commerce and DTC clients, delivered across time zones.</dd>
+            </div>
+            <div class="entry">
+              <dt>IT Manager / Marketing Intern</dt>
+              <dd class="entry__org">Remotely Philippines</dd>
+              <dd class="entry__meta mono">Lipa City, Batangas</dd>
+              <dd class="entry__desc">Ran IT operations and marketing for a remote-first company, working across both the technical and the creative side.</dd>
+            </div>
+          </dl>
         </div>
-        <div class="home-cta">
-          <a href="#projects" class="btn-primary">View Work</a>
-          <a href="#contact" class="btn-ghost">Contact</a>
+
+        <div class="about__col">
+          <h3 class="mono about__label">Education</h3>
+          <dl class="entries">
+            <div class="entry">
+              <dt>BS Entertainment &amp; Multimedia Computing</dt>
+              <dd class="entry__org">De La Salle Lipa</dd>
+              <dd class="entry__meta mono">Major in Game Development · 2022 – 2026</dd>
+              <dd class="entry__desc">
+                <ul class="honors">
+                  <li>Cum Laude, consistent Dean's Lister</li>
+                  <li>2nd Best Capstone Project, EMC Colloquium</li>
+                  <li>Class Mayor</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+
+          <h3 class="mono about__label about__label--gap">Toolkit</h3>
+          <p class="toolkit">Figma, Adobe Photoshop, Illustrator, After Effects, Jitter, Canva, Shopify, HTML, CSS, JavaScript, Unity, C#</p>
         </div>
       </div>
-      <div class="home-photo-wrap">
-        <div class="hero-red-disc"></div>
-        <div class="home-photo-frame">
-          <img class="home-photo" src="ME.png" alt="Chloe Danielle Gutierrez" />
-        </div>
-      </div>
+    </section>
+
+  </main>
+
+  <!-- Contact + footer, over the blurred footer art -->
+  <div class="finale">
+    <div class="finale__bg" aria-hidden="true">
+      <img src="assets/footer.webp" alt="" loading="lazy" decoding="async" width="1800" height="1347" />
     </div>
-
-    <!-- SCROLL TOOLS MARQUEE -->
-    <div class="tools-scroll-section">
-      <div class="tools-track-wrap">
-        <div class="tools-track">
-          <span>Figma</span><span>Canva</span><span>Adobe Creative Suite</span><span>Jitter</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Unity</span><span>C#</span><span>Python</span><span>Pandas</span><span>MongoDB</span><span>Supabase</span><span>Firebase</span><span>Git</span><span>GitHub</span><span>Vs Code</span><span>Android Studio</span>
-          <span>Figma</span><span>Canva</span><span>Adobe Creative Suite</span><span>Jitter</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Unity</span><span>C#</span><span>Python</span><span>Pandas</span><span>MongoDB</span><span>Supabase</span><span>Firebase</span><span>Git</span><span>GitHub</span><span>Vs Code</span><span>Android Studio</span>
-        </div>
+    <!-- Contact -->
+    <section class="contact section" id="contact">
+      <p class="mono contact__kicker">(06) Contact</p>
+      <h2 class="contact__title"><span class="chrome">Let's work</span><br /><span class="chrome">together</span></h2>
+      <a class="contact__email" href="mailto:gutierrezchloe1212@gmail.com" data-scramble>gutierrezchloe1212@gmail.com</a>
+      <ul class="contact__links mono glow">
+        <li><a href="https://linkedin.com/in/chloe-danielle-gutierrez" target="_blank" rel="noopener noreferrer" data-scramble>LinkedIn ↗</a></li>
+        <li><a href="https://instagram.com/gchole1" target="_blank" rel="noopener noreferrer" data-scramble>Instagram ↗</a></li>
+        <li><a href="tel:+639082955163" data-scramble>+63 908 295 5163</a></li>
+        <li><span>Open to freelance &amp; full-time</span></li>
+      </ul>
+    </section>
+    <footer class="footer">
+      <div class="footer__row mono">
+        <span>© 2026 Chloe Danielle D. Gutierrez</span>
+        <a href="#top" data-scramble>Back to top ↑</a>
       </div>
-    </div>
-  </section>
+    </footer>
+  </div>
 
-  <!-- WORK EXPERIENCE -->
-  <section id="experience" class="section">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-eyebrow">Career</span>
-        <h2 class="section-title">Work Experiences</h2>
-      </div>
-      <div class="exp-timeline">
-
-        <div class="exp-card reveal">
-          <div class="exp-card-left">
-            <div class="exp-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="7" width="20" height="14" rx="2" stroke="#E8A598" stroke-width="1.5"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" stroke="#E8A598" stroke-width="1.5"/><line x1="12" y1="12" x2="12" y2="16" stroke="#E8A598" stroke-width="1.5"/><line x1="10" y1="14" x2="14" y2="14" stroke="#E8A598" stroke-width="1.5"/></svg>
-            </div>
-            <div class="exp-line"></div>
-          </div>
-          <div class="exp-card-right">
-            <div class="exp-tags">
-              <span class="exp-tag">IT Management</span>
-              <span class="exp-tag">Marketing</span>
-            </div>
-            <h3 class="exp-role">IT Manager / Marketing Intern</h3>
-            <p class="exp-company">Remotely Philippines</p>
-            <p class="exp-location">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#8B9E8B" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" stroke="#8B9E8B" stroke-width="1.5"/></svg>
-              Lipa City, Batangas
-            </p>
-            <p class="exp-desc">Oversaw IT operations and delivered marketing initiatives for a growing remote-first company. Bridged technical and creative functions to amplify the brand's digital presence.</p>
-          </div>
-        </div>
-
-        <div class="exp-card reveal">
-          <div class="exp-card-left">
-            <div class="exp-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke="#9B8EC4" stroke-width="1.5"/><path d="M2 17l10 5 10-5" stroke="#9B8EC4" stroke-width="1.5"/><path d="M2 12l10 5 10-5" stroke="#9B8EC4" stroke-width="1.5"/></svg>
-            </div>
-          </div>
-          <div class="exp-card-right">
-            <div class="exp-tags">
-              <span class="exp-tag">Graphic Design</span>
-              <span class="exp-tag">Remote</span>
-            </div>
-            <h3 class="exp-role">Junior Graphic Designer</h3>
-            <p class="exp-company">Launch Titans</p>
-            <p class="exp-location">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#8B9E8B" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" stroke="#8B9E8B" stroke-width="1.5"/></svg>
-              Florida, United States (Remote)
-            </p>
-            <p class="exp-desc">Designed visual assets and brand collateral for a US-based growth agency. Worked across time zones to deliver creative solutions for diverse client campaigns.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section section-dark">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-eyebrow light">Portfolio</span>
-        <h2 class="section-title light">Projects</h2>
-      </div>
-
-      <!-- 1. Creative Ads -->
-      <div class="project-block reveal">
-        <h3 class="project-block-title">Creative Ads</h3>
-        <div class="scroll-gallery">
-          <div class="scroll-gallery-track" id="adsTrack">
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-1.png" alt="Creative ad 1" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-2.jpg" alt="Creative ad 2" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-3.png" alt="Creative ad 3" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-4.jpg" alt="Creative ad 4" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-5.jpg" alt="Creative ad 5" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-6.png" alt="Creative ad 6" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-7.png" alt="Creative ad 7" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-8.jpg" alt="Creative ad 8" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-9.jpg" alt="Creative ad 9" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-10.png" alt="Creative ad 10" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-11.png" alt="Creative ad 11" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-12.jpg" alt="Creative ad 12" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-13.jpg" alt="Creative ad 13" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-14.jpg" alt="Creative ad 14" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-15.jpg" alt="Creative ad 15" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-16.jpg" alt="Creative ad 16" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-17.jpg" alt="Creative ad 17" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-18.jpg" alt="Creative ad 18" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-19.jpg" alt="Creative ad 19" /></div>
-            <div class="gallery-img-wrap"><img src="CreativeAdsImages/CreativeAd-20.jpg" alt="Creative ad 20" /></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. Email Designs -->
-      <div class="project-block reveal">
-        <h3 class="project-block-title">Email Designs</h3>
-        <div class="scroll-gallery scroll-gallery-rev">
-          <div class="scroll-gallery-track reverse" id="emailTrack">
-            <div class="gallery-img-wrap tall"><img src="EmailDesigns/EmailAd1.jpg" alt="Email design 1" /></div>
-            <div class="gallery-img-wrap tall"><img src="EmailDesigns/EmailAd2.jpg" alt="Email design 2" /></div>
-            <div class="gallery-img-wrap tall"><img src="EmailDesigns/EmailAd3.jpg" alt="Email design 3" /></div>
-            <div class="gallery-img-wrap tall"><img src="EmailDesigns/EmailAd4.jpg" alt="Email design 4" /></div>
-            <div class="gallery-img-wrap tall"><img src="EmailDesigns/EmailAd5.jpg" alt="Email design 5" /></div>
-            <div class="gallery-img-wrap tall"><img src="EmailDesigns/EmailAd6.jpg" alt="Email design 6" /></div>
-            <div class="gallery-img-wrap tall"><img src="EmailDesigns/EmailAd7.jpg" alt="Email design 7" /></div>
-            <div class="gallery-img-wrap tall"><img src="EmailDesigns/EmailAd8.jpg" alt="Email design 8" /></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. GIF Animation -->
-      <div class="project-block reveal">
-        <h3 class="project-block-title">GIF Animation</h3>
-        <div class="gif-grid">
-          <div class="gif-placeholder"><img src="GifAnimations/gif1.gif" alt="GIF animation 1" /></div>
-          <div class="gif-placeholder"><img src="GifAnimations/gif2.gif" alt="GIF animation 2" /></div>
-          <div class="gif-placeholder"><img src="GifAnimations/gif3.gif" alt="GIF animation 3" /></div>
-          <div class="gif-placeholder"><img src="GifAnimations/gif4.gif" alt="GIF animation 4" /></div>
-          <div class="gif-placeholder"><img src="GifAnimations/gif5.gif" alt="GIF animation 5" /></div>
-          <div class="gif-placeholder"><img src="GifAnimations/gif6.gif" alt="GIF animation 6" /></div>
-        </div>
-      </div>
-
-      <!-- 4. Banner Designs -->
-      <div class="project-block reveal">
-        <h3 class="project-block-title">Banner Designs</h3>
-        
-        <!-- Mobile Banners Grid -->
-        <div class="banner-section">
-          <div class="banner-grid-mobile">
-            <div class="banner-item">
-              <img src="BannerDesigns/Black Pearls Candle Collection Banner Mobile.jpg" alt="Black Pearls Candle Collection mobile banner" />
-            </div>
-            <div class="banner-item">
-              <img src="BannerDesigns/Collection Page Banner - Mobile (1).jpg" alt="Collection page mobile banner" />
-            </div>
-            <div class="banner-item">
-              <img src="BannerDesigns/Memorial Day Banner  - 1080x1680 Mobile.jpg" alt="Memorial Day mobile banner" />
-            </div>
-            <div class="banner-item">
-              <img src="BannerDesigns/Muzzle - Replacement Banner - Mobile (1).jpg" alt="Muzzle replacement mobile banner" />
-            </div>
-            <div class="banner-item">
-              <img src="BannerDesigns/Roxanne Rizzo Glow Edit Banner Mobile.jpg" alt="Roxanne Rizzo Glow Edit mobile banner" />
-            </div>
-            <div class="banner-item">
-              <img src="BannerDesigns/Website Banner - Mobile (1).jpg" alt="Website banner mobile" />
-            </div>
-          </div>
-        </div>
-
-        <!-- Desktop Banners Grid -->
-        <div class="banner-section">
-          <div class="banner-grid-desktop">
-            <div class="banner-item">
-              <img src="BannerDesigns/Black Pearls Candle Collection Banner Desktop.jpg" alt="Black Pearls Candle Collection desktop banner" />
-            </div>
-            <div class="banner-item">
-              <img src="BannerDesigns/Collection Page Banner - Desktop (1).jpg" alt="Collection page desktop banner" />
-            </div>
-            <div class="banner-item">
-              <img src="BannerDesigns/Memorial Day Banner - 1800x600 Desktop.jpg" alt="Memorial Day desktop banner" />
-            </div>
-            <div class="banner-item">
-              <img src="BannerDesigns/Muzzle - Replacement Banner - Desktop (1).jpg" alt="Muzzle replacement desktop banner" />
-            </div>
-            <div class="banner-item">
-              <img src="BannerDesigns/Roxanne Rizzo Glow Edit Banner Desktop.jpg" alt="Roxanne Rizzo Glow Edit desktop banner" />
-            </div>
-            <div class="banner-item">
-              <img src="BannerDesigns/Website Banner - Desktop (1).jpg" alt="Website banner desktop" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. Web Design UI/UX -->
-      <div class="project-block reveal">
-        <h3 class="project-block-title">Web Design — UI/UX</h3>
-        <div class="cards-grid">
-          <div class="proj-card">
-            <div class="proj-card-img">
-              <img src="WebDesigns/RHNWAGYUweb.png" alt="RHN WAGYU about us web design" />
-              <div class="proj-card-overlay">
-                <button class="btn-open" onclick="openProjectModal(1)">Open Project</button>
-              </div>
-            </div>
-            <div class="proj-card-body">
-              <span class="proj-num">01</span>
-              <h4>RHN WAGYU About Us</h4>
-              <p>Shopify / About Page</p>
-            </div>
-          </div>
-          <div class="proj-card">
-            <div class="proj-card-img">
-              <img src="WebDesigns/Contours LandingPage.png" alt="Contours landing page web design" />
-              <div class="proj-card-overlay">
-                <button class="btn-open" onclick="openProjectModal(2)">Open Project</button>
-              </div>
-            </div>
-            <div class="proj-card-body">
-              <span class="proj-num">02</span>
-              <h4>Contours Landing Page</h4>
-              <p>Landing Page</p>
-            </div>
-          </div>
-          <div class="proj-card">
-            <div class="proj-card-img">
-              <img src="WebDesigns/Muzzle Gravity PDP.png" alt="Muzzle Gravity PDP web design" />
-              <div class="proj-card-overlay">
-                <button class="btn-open" onclick="openProjectModal(3)">Open Project</button>
-              </div>
-            </div>
-            <div class="proj-card-body">
-              <span class="proj-num">03</span>
-              <h4>Muzzle Gravity PDP</h4>
-              <p>Product Detail Page</p>
-            </div>
-          </div>
-          <div class="proj-card">
-            <div class="proj-card-img">
-              <img src="WebDesigns/Nasal Strip PDP.png" alt="Muzzle Nasal Strip PDP web design" />
-              <div class="proj-card-overlay">
-                <button class="btn-open" onclick="openProjectModal(4)">Open Project</button>
-              </div>
-            </div>
-            <div class="proj-card-body">
-              <span class="proj-num">04</span>
-              <h4>Muzzle Nasal Strip PDP</h4>
-              <p>Product Detail Page</p>
-            </div>
-          </div>
-          <div class="proj-card">
-            <div class="proj-card-img">
-              <img src="WebDesigns/MDJ Catering WEb.png" alt="MDJ Catering web design" />
-              <div class="proj-card-overlay">
-                <button class="btn-open" onclick="openProjectModal(5)">Open Project</button>
-              </div>
-            </div>
-            <div class="proj-card-body">
-              <span class="proj-num">05</span>
-              <h4>MDJ Catering</h4>
-              <p>Brand Website</p>
-            </div>
-          </div>
-          <div class="proj-card">
-            <div class="proj-card-img">
-              <img src="WebDesigns/DASH web.png" alt="Dash web design" />
-              <div class="proj-card-overlay">
-                <button class="btn-open" onclick="openProjectModal(6)">Open Project</button>
-              </div>
-            </div>
-            <div class="proj-card-body">
-              <span class="proj-num">06</span>
-              <h4>Dash Web</h4>
-              <p>Dashboard Interface</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PROJECT MODAL -->
-  <div id="projectModal" class="modal-overlay" onclick="closeModal(event)">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeProjectModal()">✕</button>
-      <img class="modal-img" id="modalImg" src="" alt="Project preview" />
-      <div class="modal-body">
-        <span class="modal-tag">UI/UX Design</span>
-        <h3 id="modalTitle">Project Title</h3>
-        <p id="modalDesc">A polished digital experience crafted with a strong focus on conversion, clarity, and visual storytelling.</p>
-        <div class="modal-tools" id="modalTools"></div>
-        <div class="modal-actions">
-          <a id="modalLiveBtn" class="modal-live-btn" href="#" target="_blank" rel="noopener noreferrer">View Live</a>
-        </div>
+  <!-- Web project modal -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal__panel">
+      <button class="modal__close mono" data-modal="close">Close ✕</button>
+      <div class="modal__img"><img id="modalImg" alt="" /></div>
+      <div class="modal__body">
+        <p class="mono modal__type" id="modalType"></p>
+        <h3 class="modal__title chrome" id="modalTitle"></h3>
+        <p class="modal__desc" id="modalDesc"></p>
+        <p class="mono modal__tools" id="modalTools"></p>
+        <a class="modal__live metal-pill mono" id="modalLive" href="#" target="_blank" rel="noopener noreferrer">View live ↗</a>
       </div>
     </div>
   </div>
 
-  <!-- EDUCATION -->
-  <section id="education" class="section">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-eyebrow">Academic Background</span>
-        <h2 class="section-title">Education</h2>
-      </div>
-      <div class="edu-block reveal">
-        <img class="edu-badge dlsl-logo" src="DLSL_Official_logo.png" alt="De La Salle Lipa logo" />
-        <div class="edu-content">
-          <div class="edu-school">De La Salle Lipa</div>
-          <div class="edu-location">Lipa City, Philippines &nbsp;·&nbsp; 2022 – 2026</div>
-          <div class="edu-degree">Bachelor of Science in Entertainment and Multimedia Computing</div>
-          <div class="edu-major">Major in Game Development</div>
-          <div class="edu-achievements">
-            <div class="achievement-item">
-              <div class="ach-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#9B8EC4" stroke-width="1.5" fill="none"/></svg>
-              </div>
-              <p>Graduated <strong>Cum Laude</strong> | Consistent Dean's Lister (2022–2026)</p>
-            </div>
-            <div class="achievement-item">
-              <div class="ach-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" stroke="#E8A598" stroke-width="1.5"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" stroke="#E8A598" stroke-width="1.5"/><path d="M4 22h16M8 22V10m8 12V10m-8-4h8a4 4 0 1 0-8 0z" stroke="#E8A598" stroke-width="1.5"/></svg>
-              </div>
-              <p>Awarded <strong>2nd Best Capstone Project</strong> at the EMC Colloquium</p>
-            </div>
-            <div class="achievement-item">
-              <div class="ach-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="#8B9E8B" stroke-width="1.5"/><circle cx="9" cy="7" r="4" stroke="#8B9E8B" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="#8B9E8B" stroke-width="1.5"/></svg>
-              </div>
-              <p>Elected as <strong>Class Mayor</strong> — student-professor communications & cohort initiatives</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section section-contact">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-eyebrow">Let's Work Together</span>
-        <h2 class="section-title">Contact Me</h2>
-        <p class="contact-intro">Open to freelance, full-time, and collaborative creative opportunities.</p>
-      </div>
-      <div class="contact-grid reveal">
-        <a class="contact-card" href="mailto:gutierrezchloe1212@gmail.com">
-          <div class="cc-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="#E8A598" stroke-width="1.5"/><path d="M2 7l10 7 10-7" stroke="#E8A598" stroke-width="1.5"/></svg>
-          </div>
-          <div class="cc-text">
-            <span class="cc-label">Email</span>
-            <span class="cc-value">gutierrezchloe1212@gmail.com</span>
-          </div>
-          <div class="cc-arrow">→</div>
-        </a>
-        <a class="contact-card" href="tel:+639082955163">
-          <div class="cc-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.63 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="#9B8EC4" stroke-width="1.5"/></svg>
-          </div>
-          <div class="cc-text">
-            <span class="cc-label">Phone</span>
-            <span class="cc-value">+63 908 295 5163</span>
-          </div>
-          <div class="cc-arrow">→</div>
-        </a>
-        <a class="contact-card" href="https://linkedin.com/in/chloe-danielle-gutierrez" target="_blank">
-          <div class="cc-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="#8B9E8B" stroke-width="1.5"/><path d="M7 10v7M7 7v.01" stroke="#8B9E8B" stroke-width="1.5" stroke-linecap="round"/><path d="M11 17v-3.5a2.5 2.5 0 0 1 5 0V17M11 10v7" stroke="#8B9E8B" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <div class="cc-text">
-            <span class="cc-label">LinkedIn</span>
-            <span class="cc-value">chloe-danielle-gutierrez</span>
-          </div>
-          <div class="cc-arrow">→</div>
-        </a>
-        <div class="contact-card no-link">
-          <div class="cc-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#E8A598" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" stroke="#E8A598" stroke-width="1.5"/></svg>
-          </div>
-          <div class="cc-text">
-            <span class="cc-label">Location</span>
-            <span class="cc-value">Cuenca, Batangas, Philippines</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <span class="footer-logo">CDG</span>
-      <span class="footer-copy">© 2025 Chloe Danielle D. Gutierrez. Designed with intention.</span>
-      <span class="footer-back"><a href="#home">↑ Back to top</a></span>
-    </div>
-  </footer>
-
+  <script src="data.js"></script>
+  <script src="chrome.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
